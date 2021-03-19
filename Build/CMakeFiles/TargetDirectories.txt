@@ -1,0 +1,14 @@
+/home/sarmento/LIB/listasPDI/Build/CMakeFiles/install.dir
+/home/sarmento/LIB/listasPDI/Build/CMakeFiles/list_install_components.dir
+/home/sarmento/LIB/listasPDI/Build/CMakeFiles/install/strip.dir
+/home/sarmento/LIB/listasPDI/Build/CMakeFiles/install/local.dir
+/home/sarmento/LIB/listasPDI/Build/CMakeFiles/rebuild_cache.dir
+/home/sarmento/LIB/listasPDI/Build/CMakeFiles/edit_cache.dir
+/home/sarmento/LIB/listasPDI/Build/applications/CMakeFiles/install.dir
+/home/sarmento/LIB/listasPDI/Build/applications/CMakeFiles/list_install_components.dir
+/home/sarmento/LIB/listasPDI/Build/applications/CMakeFiles/rebuild_cache.dir
+/home/sarmento/LIB/listasPDI/Build/applications/CMakeFiles/edit_cache.dir
+/home/sarmento/LIB/listasPDI/Build/applications/CMakeFiles/hello.dir
+/home/sarmento/LIB/listasPDI/Build/applications/CMakeFiles/pixels.dir
+/home/sarmento/LIB/listasPDI/Build/applications/CMakeFiles/install/strip.dir
+/home/sarmento/LIB/listasPDI/Build/applications/CMakeFiles/install/local.dir
