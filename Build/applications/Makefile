@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sarmento/LIB/listasPDI
+CMAKE_SOURCE_DIR = /home/sarmento/LIB/ListasPDI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sarmento/LIB/listasPDI/Build
+CMAKE_BINARY_DIR = /home/sarmento/LIB/ListasPDI/Build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,16 +68,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"bin\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -89,16 +79,15 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"bin\" \"shlib\""
+.PHONY : list_install_components
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : edit_cache/fast
+.PHONY : list_install_components/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -122,16 +111,27 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/sarmento/LIB/listasPDI/Build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/listasPDI/Build/CMakeFiles /home/sarmento/LIB/listasPDI/Build/applications/CMakeFiles/progress.marks
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/listasPDI/Build/CMakeFiles 0
+	cd /home/sarmento/LIB/ListasPDI/Build && $(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/progress.marks
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/clean
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,37 +141,37 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/preinstall
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/preinstall
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/sarmento/LIB/listasPDI/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/sarmento/LIB/ListasPDI/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-applications/CMakeFiles/hello.dir/rule:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/hello.dir/rule
-.PHONY : applications/CMakeFiles/hello.dir/rule
+applications/CMakeFiles/2_2regions.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/2_2regions.dir/rule
+.PHONY : applications/CMakeFiles/2_2regions.dir/rule
 
 # Convenience name for target.
-hello: applications/CMakeFiles/hello.dir/rule
+2_2regions: applications/CMakeFiles/2_2regions.dir/rule
 
-.PHONY : hello
+.PHONY : 2_2regions
 
 # fast build rule for target.
-hello/fast:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/build
-.PHONY : hello/fast
+2_2regions/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2regions.dir/build.make applications/CMakeFiles/2_2regions.dir/build
+.PHONY : 2_2regions/fast
 
 # Convenience name for target.
 applications/CMakeFiles/pixels.dir/rule:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/pixels.dir/rule
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/pixels.dir/rule
 .PHONY : applications/CMakeFiles/pixels.dir/rule
 
 # Convenience name for target.
@@ -181,8 +181,107 @@ pixels: applications/CMakeFiles/pixels.dir/rule
 
 # fast build rule for target.
 pixels/fast:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/build
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/build
 .PHONY : pixels/fast
+
+# Convenience name for target.
+applications/CMakeFiles/labeling.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/labeling.dir/rule
+.PHONY : applications/CMakeFiles/labeling.dir/rule
+
+# Convenience name for target.
+labeling: applications/CMakeFiles/labeling.dir/rule
+
+.PHONY : labeling
+
+# fast build rule for target.
+labeling/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/build
+.PHONY : labeling/fast
+
+# Convenience name for target.
+applications/CMakeFiles/2_2trocaregioes.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/2_2trocaregioes.dir/rule
+.PHONY : applications/CMakeFiles/2_2trocaregioes.dir/rule
+
+# Convenience name for target.
+2_2trocaregioes: applications/CMakeFiles/2_2trocaregioes.dir/rule
+
+.PHONY : 2_2trocaregioes
+
+# fast build rule for target.
+2_2trocaregioes/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2trocaregioes.dir/build.make applications/CMakeFiles/2_2trocaregioes.dir/build
+.PHONY : 2_2trocaregioes/fast
+
+# Convenience name for target.
+applications/CMakeFiles/hello.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/hello.dir/rule
+.PHONY : applications/CMakeFiles/hello.dir/rule
+
+# Convenience name for target.
+hello: applications/CMakeFiles/hello.dir/rule
+
+.PHONY : hello
+
+# fast build rule for target.
+hello/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/build
+.PHONY : hello/fast
+
+2_2regions.o: 2_2regions.cpp.o
+
+.PHONY : 2_2regions.o
+
+# target to build an object file
+2_2regions.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2regions.dir/build.make applications/CMakeFiles/2_2regions.dir/2_2regions.cpp.o
+.PHONY : 2_2regions.cpp.o
+
+2_2regions.i: 2_2regions.cpp.i
+
+.PHONY : 2_2regions.i
+
+# target to preprocess a source file
+2_2regions.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2regions.dir/build.make applications/CMakeFiles/2_2regions.dir/2_2regions.cpp.i
+.PHONY : 2_2regions.cpp.i
+
+2_2regions.s: 2_2regions.cpp.s
+
+.PHONY : 2_2regions.s
+
+# target to generate assembly for a file
+2_2regions.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2regions.dir/build.make applications/CMakeFiles/2_2regions.dir/2_2regions.cpp.s
+.PHONY : 2_2regions.cpp.s
+
+2_2trocaregioes.o: 2_2trocaregioes.cpp.o
+
+.PHONY : 2_2trocaregioes.o
+
+# target to build an object file
+2_2trocaregioes.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2trocaregioes.dir/build.make applications/CMakeFiles/2_2trocaregioes.dir/2_2trocaregioes.cpp.o
+.PHONY : 2_2trocaregioes.cpp.o
+
+2_2trocaregioes.i: 2_2trocaregioes.cpp.i
+
+.PHONY : 2_2trocaregioes.i
+
+# target to preprocess a source file
+2_2trocaregioes.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2trocaregioes.dir/build.make applications/CMakeFiles/2_2trocaregioes.dir/2_2trocaregioes.cpp.i
+.PHONY : 2_2trocaregioes.cpp.i
+
+2_2trocaregioes.s: 2_2trocaregioes.cpp.s
+
+.PHONY : 2_2trocaregioes.s
+
+# target to generate assembly for a file
+2_2trocaregioes.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2trocaregioes.dir/build.make applications/CMakeFiles/2_2trocaregioes.dir/2_2trocaregioes.cpp.s
+.PHONY : 2_2trocaregioes.cpp.s
 
 hello.o: hello.cpp.o
 
@@ -190,7 +289,7 @@ hello.o: hello.cpp.o
 
 # target to build an object file
 hello.cpp.o:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/hello.cpp.o
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/hello.cpp.o
 .PHONY : hello.cpp.o
 
 hello.i: hello.cpp.i
@@ -199,7 +298,7 @@ hello.i: hello.cpp.i
 
 # target to preprocess a source file
 hello.cpp.i:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/hello.cpp.i
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/hello.cpp.i
 .PHONY : hello.cpp.i
 
 hello.s: hello.cpp.s
@@ -208,8 +307,35 @@ hello.s: hello.cpp.s
 
 # target to generate assembly for a file
 hello.cpp.s:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/hello.cpp.s
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/hello.cpp.s
 .PHONY : hello.cpp.s
+
+labeling.o: labeling.cpp.o
+
+.PHONY : labeling.o
+
+# target to build an object file
+labeling.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/labeling.cpp.o
+.PHONY : labeling.cpp.o
+
+labeling.i: labeling.cpp.i
+
+.PHONY : labeling.i
+
+# target to preprocess a source file
+labeling.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/labeling.cpp.i
+.PHONY : labeling.cpp.i
+
+labeling.s: labeling.cpp.s
+
+.PHONY : labeling.s
+
+# target to generate assembly for a file
+labeling.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/labeling.cpp.s
+.PHONY : labeling.cpp.s
 
 pixels.o: pixels.cpp.o
 
@@ -217,7 +343,7 @@ pixels.o: pixels.cpp.o
 
 # target to build an object file
 pixels.cpp.o:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/pixels.cpp.o
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/pixels.cpp.o
 .PHONY : pixels.cpp.o
 
 pixels.i: pixels.cpp.i
@@ -226,7 +352,7 @@ pixels.i: pixels.cpp.i
 
 # target to preprocess a source file
 pixels.cpp.i:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/pixels.cpp.i
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/pixels.cpp.i
 .PHONY : pixels.cpp.i
 
 pixels.s: pixels.cpp.s
@@ -235,7 +361,7 @@ pixels.s: pixels.cpp.s
 
 # target to generate assembly for a file
 pixels.cpp.s:
-	cd /home/sarmento/LIB/listasPDI/Build && $(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/pixels.cpp.s
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/pixels.cpp.s
 .PHONY : pixels.cpp.s
 
 # Help Target
@@ -245,16 +371,28 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... hello"
+	@echo "... 2_2regions"
 	@echo "... pixels"
+	@echo "... labeling"
+	@echo "... 2_2trocaregioes"
+	@echo "... rebuild_cache"
+	@echo "... hello"
+	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
+	@echo "... 2_2regions.o"
+	@echo "... 2_2regions.i"
+	@echo "... 2_2regions.s"
+	@echo "... 2_2trocaregioes.o"
+	@echo "... 2_2trocaregioes.i"
+	@echo "... 2_2trocaregioes.s"
 	@echo "... hello.o"
 	@echo "... hello.i"
 	@echo "... hello.s"
+	@echo "... labeling.o"
+	@echo "... labeling.i"
+	@echo "... labeling.s"
 	@echo "... pixels.o"
 	@echo "... pixels.i"
 	@echo "... pixels.s"
@@ -269,6 +407,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/sarmento/LIB/listasPDI/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/sarmento/LIB/ListasPDI/Build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

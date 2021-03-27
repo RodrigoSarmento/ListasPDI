@@ -1,4 +1,4 @@
-# Install script for directory: /home/sarmento/LIB/listasPDI
+# Install script for directory: /home/sarmento/LIB/ListasPDI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/sarmento/LIB/listasPDI/Build/applications/cmake_install.cmake")
+  include("/home/sarmento/LIB/ListasPDI/Build/utils/cmake_install.cmake")
+  include("/home/sarmento/LIB/ListasPDI/Build/applications/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +47,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sarmento/LIB/listasPDI/Build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sarmento/LIB/ListasPDI/Build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

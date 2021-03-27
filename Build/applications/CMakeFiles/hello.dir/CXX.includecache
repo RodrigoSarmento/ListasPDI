@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/sarmento/LIB/listasPDI/applications/hello.cpp
+/home/sarmento/LIB/ListasPDI/applications/hello.cpp
 iostream
 -
 opencv2/opencv.hpp

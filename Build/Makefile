@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sarmento/LIB/listasPDI
+CMAKE_SOURCE_DIR = /home/sarmento/LIB/ListasPDI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sarmento/LIB/listasPDI/Build
+CMAKE_BINARY_DIR = /home/sarmento/LIB/ListasPDI/Build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -70,7 +70,7 @@ install/fast: preinstall/fast
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"bin\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"bin\" \"shlib\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -124,9 +124,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/listasPDI/Build/CMakeFiles /home/sarmento/LIB/listasPDI/Build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles /home/sarmento/LIB/ListasPDI/Build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/listasPDI/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -155,17 +155,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hello
+# Target rules for targets named listas_utils
 
 # Build rule for target.
-hello: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hello
-.PHONY : hello
+listas_utils: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 listas_utils
+.PHONY : listas_utils
 
 # fast build rule for target.
-hello/fast:
-	$(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/build
-.PHONY : hello/fast
+listas_utils/fast:
+	$(MAKE) -f utils/CMakeFiles/listas_utils.dir/build.make utils/CMakeFiles/listas_utils.dir/build
+.PHONY : listas_utils/fast
+
+#=============================================================================
+# Target rules for targets named 2_2regions
+
+# Build rule for target.
+2_2regions: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 2_2regions
+.PHONY : 2_2regions
+
+# fast build rule for target.
+2_2regions/fast:
+	$(MAKE) -f applications/CMakeFiles/2_2regions.dir/build.make applications/CMakeFiles/2_2regions.dir/build
+.PHONY : 2_2regions/fast
 
 #=============================================================================
 # Target rules for targets named pixels
@@ -180,6 +193,45 @@ pixels/fast:
 	$(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/build
 .PHONY : pixels/fast
 
+#=============================================================================
+# Target rules for targets named labeling
+
+# Build rule for target.
+labeling: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 labeling
+.PHONY : labeling
+
+# fast build rule for target.
+labeling/fast:
+	$(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/build
+.PHONY : labeling/fast
+
+#=============================================================================
+# Target rules for targets named 2_2trocaregioes
+
+# Build rule for target.
+2_2trocaregioes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 2_2trocaregioes
+.PHONY : 2_2trocaregioes
+
+# fast build rule for target.
+2_2trocaregioes/fast:
+	$(MAKE) -f applications/CMakeFiles/2_2trocaregioes.dir/build.make applications/CMakeFiles/2_2trocaregioes.dir/build
+.PHONY : 2_2trocaregioes/fast
+
+#=============================================================================
+# Target rules for targets named hello
+
+# Build rule for target.
+hello: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hello
+.PHONY : hello
+
+# fast build rule for target.
+hello/fast:
+	$(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/build
+.PHONY : hello/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,8 +244,12 @@ help:
 	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... hello"
+	@echo "... listas_utils"
+	@echo "... 2_2regions"
 	@echo "... pixels"
+	@echo "... labeling"
+	@echo "... 2_2trocaregioes"
+	@echo "... hello"
 .PHONY : help
 
 

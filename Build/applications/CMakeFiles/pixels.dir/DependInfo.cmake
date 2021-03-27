@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/sarmento/LIB/listasPDI/applications/pixels.cpp" "/home/sarmento/LIB/listasPDI/Build/applications/CMakeFiles/pixels.dir/pixels.cpp.o"
+  "/home/sarmento/LIB/ListasPDI/applications/pixels.cpp" "/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/pixels.dir/pixels.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -14,6 +14,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "."
   "/opt/ros/kinetic/include/opencv-3.3.1-dev"
   "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
+  "../utils"
   )
 
 # Targets to which this target links.

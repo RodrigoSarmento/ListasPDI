@@ -4,13 +4,13 @@
 using namespace cv;
 using namespace std;
 
-int main(int, char**)
+int main(int argc, char* argv[])
 {
     cv::Mat image;
     cv::Vec3b val;
 
-    image = cv::imread("../../assets/bolhas.png", cv::IMREAD_GRAYSCALE);
-    if (!image.data) std::cout << "nao abriu bolhas.png" << std::endl;
+    image = cv::imread("../../assets/biel.png", cv::IMREAD_GRAYSCALE);
+    if (!image.data) std::cout << "nao abriu biel.png" << std::endl;
 
     cv::namedWindow("janela", cv::WINDOW_AUTOSIZE);
 
@@ -22,7 +22,7 @@ int main(int, char**)
     cv::imshow("janela", image);
     cv::waitKey();
 
-    image = cv::imread("../../assets/bolhas.png", cv::IMREAD_COLOR);
+    image = cv::imread("../../assets/biel.png", cv::IMREAD_COLOR);
 
     val[0] = 0;   // B
     val[1] = 0;   // G

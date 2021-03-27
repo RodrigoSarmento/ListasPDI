@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++11 -Wall -Wextra -fsanitize=address -fsanitize=leak
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/sarmento/LIB/listasPDI -I/home/sarmento/LIB/listasPDI/Build -isystem /opt/ros/kinetic/include/opencv-3.3.1-dev -isystem /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv 
+CXX_INCLUDES = -I/home/sarmento/LIB/ListasPDI -I/home/sarmento/LIB/ListasPDI/Build -isystem /opt/ros/kinetic/include/opencv-3.3.1-dev -isystem /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv -I/home/sarmento/LIB/ListasPDI/utils 
 
