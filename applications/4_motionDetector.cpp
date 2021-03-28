@@ -5,12 +5,14 @@
 using namespace std;
 using namespace cv;
 
+void motionDetector(Mat hist, Mat& previouslyHist);
+
 int main(int argc, char* argv[])
 {
     Mat image;
     int width, height;
-    vector<Mat> planes;
     Mat hist;
+    Mat previouslyHist;
     int nbins = 64;
     float range[] = {0, 255};
     const float* histrange = {range};
@@ -19,6 +21,7 @@ int main(int argc, char* argv[])
     int key;
     string video_name;
     int channels[] = {0};
+    int i = 0;
 
     if (argc != 2) {
         printf("Couldn't load all parameter, use example of use: ./4_histogram config_file\n");
@@ -46,7 +49,7 @@ int main(int argc, char* argv[])
     int histw = nbins, histh = nbins / 2;
     Mat histImg(histh, histw, CV_8UC3, Scalar(0, 0, 0));
 
-    while (1) {
+    while (cap.isOpened()) {
 
         cap >> image;
         // If the frame is empty, break immediately
@@ -55,24 +58,30 @@ int main(int argc, char* argv[])
         // Converting image to gray
         cvtColor(image, image, COLOR_BGR2GRAY);
 
+        // Calculate Hist
         calcHist(&image, 1, channels, Mat(), hist, 1, &nbins, &histrange, uniform, acummulate);
         normalize(hist, hist, 0, histImg.rows, NORM_MINMAX, -1, Mat());
 
+        if (i == 0)
+            previouslyHist = hist.clone();
+        else
+            motionDetector(hist, previouslyHist);
+
         histImg.setTo(Scalar(0));
 
+        // Show image
         for (int i = 0; i < nbins; i++) {
             line(histImg, Point(i, histh), Point(i, histh - cvRound(hist.at<float>(i))), Scalar(0, 0, 255), 1, 8, 0);
         }
         Mat equalized;
-        equalizeHist(image, equalized);
 
-        imshow("image_equalized", equalized);
         imshow("image", image);
         imshow("image_hist", histImg);
 
         // Press  ESC on keyboard to exit
         key = waitKey(30);
         if (key == 27) break;
+        i++;
     }
 
     // When everything done, release the video capture object
@@ -82,4 +91,22 @@ int main(int argc, char* argv[])
     destroyAllWindows();
 
     return 0;
+}
+
+void motionDetector(Mat hist, Mat& previouslyHist)
+{
+    float difference;
+    int differenteBeans;
+    float trono;
+    for (int i = 0; i < 64; i++) {
+        difference = abs(hist.at<float>(i) - previouslyHist.at<float>(i));
+        if (i == 0)
+            trono = difference;
+        else if (difference > trono)
+            trono = difference;
+        if (difference >= 1) differenteBeans++; // Arbitrário
+    }
+    if (differenteBeans >= 16) { cout << "motion Detector\n"; } // 25% difference
+    // cout << differenteBeans << endl;
+    previouslyHist = hist.clone();
 }

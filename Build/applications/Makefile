@@ -56,6 +56,17 @@ CMAKE_BINARY_DIR = /home/sarmento/LIB/ListasPDI/Build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -110,17 +121,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -185,6 +185,36 @@ pixels/fast:
 .PHONY : pixels/fast
 
 # Convenience name for target.
+applications/CMakeFiles/4_motionDetector.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/4_motionDetector.dir/rule
+.PHONY : applications/CMakeFiles/4_motionDetector.dir/rule
+
+# Convenience name for target.
+4_motionDetector: applications/CMakeFiles/4_motionDetector.dir/rule
+
+.PHONY : 4_motionDetector
+
+# fast build rule for target.
+4_motionDetector/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/4_motionDetector.dir/build.make applications/CMakeFiles/4_motionDetector.dir/build
+.PHONY : 4_motionDetector/fast
+
+# Convenience name for target.
+applications/CMakeFiles/3_floodfill.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/3_floodfill.dir/rule
+.PHONY : applications/CMakeFiles/3_floodfill.dir/rule
+
+# Convenience name for target.
+3_floodfill: applications/CMakeFiles/3_floodfill.dir/rule
+
+.PHONY : 3_floodfill
+
+# fast build rule for target.
+3_floodfill/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/build
+.PHONY : 3_floodfill/fast
+
+# Convenience name for target.
 applications/CMakeFiles/2_2trocaregioes.dir/rule:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/2_2trocaregioes.dir/rule
 .PHONY : applications/CMakeFiles/2_2trocaregioes.dir/rule
@@ -215,19 +245,19 @@ hello/fast:
 .PHONY : hello/fast
 
 # Convenience name for target.
-applications/CMakeFiles/3_floodfill.dir/rule:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/3_floodfill.dir/rule
-.PHONY : applications/CMakeFiles/3_floodfill.dir/rule
+applications/CMakeFiles/5_filtroEspacial.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/5_filtroEspacial.dir/rule
+.PHONY : applications/CMakeFiles/5_filtroEspacial.dir/rule
 
 # Convenience name for target.
-3_floodfill: applications/CMakeFiles/3_floodfill.dir/rule
+5_filtroEspacial: applications/CMakeFiles/5_filtroEspacial.dir/rule
 
-.PHONY : 3_floodfill
+.PHONY : 5_filtroEspacial
 
 # fast build rule for target.
-3_floodfill/fast:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/build
-.PHONY : 3_floodfill/fast
+5_filtroEspacial/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/5_filtroEspacial.dir/build.make applications/CMakeFiles/5_filtroEspacial.dir/build
+.PHONY : 5_filtroEspacial/fast
 
 # Convenience name for target.
 applications/CMakeFiles/4_histogram.dir/rule:
@@ -352,6 +382,60 @@ applications/CMakeFiles/4_histogram.dir/rule:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/4_histogram.cpp.s
 .PHONY : 4_histogram.cpp.s
 
+4_motionDetector.o: 4_motionDetector.cpp.o
+
+.PHONY : 4_motionDetector.o
+
+# target to build an object file
+4_motionDetector.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/4_motionDetector.dir/build.make applications/CMakeFiles/4_motionDetector.dir/4_motionDetector.cpp.o
+.PHONY : 4_motionDetector.cpp.o
+
+4_motionDetector.i: 4_motionDetector.cpp.i
+
+.PHONY : 4_motionDetector.i
+
+# target to preprocess a source file
+4_motionDetector.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/4_motionDetector.dir/build.make applications/CMakeFiles/4_motionDetector.dir/4_motionDetector.cpp.i
+.PHONY : 4_motionDetector.cpp.i
+
+4_motionDetector.s: 4_motionDetector.cpp.s
+
+.PHONY : 4_motionDetector.s
+
+# target to generate assembly for a file
+4_motionDetector.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/4_motionDetector.dir/build.make applications/CMakeFiles/4_motionDetector.dir/4_motionDetector.cpp.s
+.PHONY : 4_motionDetector.cpp.s
+
+5_filtroEspacial.o: 5_filtroEspacial.cpp.o
+
+.PHONY : 5_filtroEspacial.o
+
+# target to build an object file
+5_filtroEspacial.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/5_filtroEspacial.dir/build.make applications/CMakeFiles/5_filtroEspacial.dir/5_filtroEspacial.cpp.o
+.PHONY : 5_filtroEspacial.cpp.o
+
+5_filtroEspacial.i: 5_filtroEspacial.cpp.i
+
+.PHONY : 5_filtroEspacial.i
+
+# target to preprocess a source file
+5_filtroEspacial.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/5_filtroEspacial.dir/build.make applications/CMakeFiles/5_filtroEspacial.dir/5_filtroEspacial.cpp.i
+.PHONY : 5_filtroEspacial.cpp.i
+
+5_filtroEspacial.s: 5_filtroEspacial.cpp.s
+
+.PHONY : 5_filtroEspacial.s
+
+# target to generate assembly for a file
+5_filtroEspacial.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/5_filtroEspacial.dir/build.make applications/CMakeFiles/5_filtroEspacial.dir/5_filtroEspacial.cpp.s
+.PHONY : 5_filtroEspacial.cpp.s
+
 hello.o: hello.cpp.o
 
 .PHONY : hello.o
@@ -412,18 +496,20 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... edit_cache"
 	@echo "... 2_2regions"
 	@echo "... pixels"
-	@echo "... 2_2trocaregioes"
-	@echo "... rebuild_cache"
-	@echo "... hello"
+	@echo "... 4_motionDetector"
 	@echo "... 3_floodfill"
+	@echo "... rebuild_cache"
+	@echo "... 2_2trocaregioes"
+	@echo "... hello"
+	@echo "... 5_filtroEspacial"
 	@echo "... install"
 	@echo "... 4_histogram"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... edit_cache"
 	@echo "... 2_2regions.o"
 	@echo "... 2_2regions.i"
 	@echo "... 2_2regions.s"
@@ -436,6 +522,12 @@ help:
 	@echo "... 4_histogram.o"
 	@echo "... 4_histogram.i"
 	@echo "... 4_histogram.s"
+	@echo "... 4_motionDetector.o"
+	@echo "... 4_motionDetector.i"
+	@echo "... 4_motionDetector.s"
+	@echo "... 5_filtroEspacial.o"
+	@echo "... 5_filtroEspacial.i"
+	@echo "... 5_filtroEspacial.s"
 	@echo "... hello.o"
 	@echo "... hello.i"
 	@echo "... hello.s"

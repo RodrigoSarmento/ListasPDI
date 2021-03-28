@@ -194,6 +194,32 @@ pixels/fast:
 .PHONY : pixels/fast
 
 #=============================================================================
+# Target rules for targets named 4_motionDetector
+
+# Build rule for target.
+4_motionDetector: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 4_motionDetector
+.PHONY : 4_motionDetector
+
+# fast build rule for target.
+4_motionDetector/fast:
+	$(MAKE) -f applications/CMakeFiles/4_motionDetector.dir/build.make applications/CMakeFiles/4_motionDetector.dir/build
+.PHONY : 4_motionDetector/fast
+
+#=============================================================================
+# Target rules for targets named 3_floodfill
+
+# Build rule for target.
+3_floodfill: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 3_floodfill
+.PHONY : 3_floodfill
+
+# fast build rule for target.
+3_floodfill/fast:
+	$(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/build
+.PHONY : 3_floodfill/fast
+
+#=============================================================================
 # Target rules for targets named 2_2trocaregioes
 
 # Build rule for target.
@@ -220,17 +246,17 @@ hello/fast:
 .PHONY : hello/fast
 
 #=============================================================================
-# Target rules for targets named 3_floodfill
+# Target rules for targets named 5_filtroEspacial
 
 # Build rule for target.
-3_floodfill: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 3_floodfill
-.PHONY : 3_floodfill
+5_filtroEspacial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 5_filtroEspacial
+.PHONY : 5_filtroEspacial
 
 # fast build rule for target.
-3_floodfill/fast:
-	$(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/build
-.PHONY : 3_floodfill/fast
+5_filtroEspacial/fast:
+	$(MAKE) -f applications/CMakeFiles/5_filtroEspacial.dir/build.make applications/CMakeFiles/5_filtroEspacial.dir/build
+.PHONY : 5_filtroEspacial/fast
 
 #=============================================================================
 # Target rules for targets named 4_histogram
@@ -260,9 +286,11 @@ help:
 	@echo "... listas_utils"
 	@echo "... 2_2regions"
 	@echo "... pixels"
+	@echo "... 4_motionDetector"
+	@echo "... 3_floodfill"
 	@echo "... 2_2trocaregioes"
 	@echo "... hello"
-	@echo "... 3_floodfill"
+	@echo "... 5_filtroEspacial"
 	@echo "... 4_histogram"
 .PHONY : help
 
