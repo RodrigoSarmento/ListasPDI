@@ -56,6 +56,17 @@ CMAKE_BINARY_DIR = /home/sarmento/LIB/ListasPDI/Build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -67,17 +78,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -185,21 +185,6 @@ pixels/fast:
 .PHONY : pixels/fast
 
 # Convenience name for target.
-applications/CMakeFiles/labeling.dir/rule:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/labeling.dir/rule
-.PHONY : applications/CMakeFiles/labeling.dir/rule
-
-# Convenience name for target.
-labeling: applications/CMakeFiles/labeling.dir/rule
-
-.PHONY : labeling
-
-# fast build rule for target.
-labeling/fast:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/build
-.PHONY : labeling/fast
-
-# Convenience name for target.
 applications/CMakeFiles/2_2trocaregioes.dir/rule:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/2_2trocaregioes.dir/rule
 .PHONY : applications/CMakeFiles/2_2trocaregioes.dir/rule
@@ -228,6 +213,36 @@ hello: applications/CMakeFiles/hello.dir/rule
 hello/fast:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/build
 .PHONY : hello/fast
+
+# Convenience name for target.
+applications/CMakeFiles/3_floodfill.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/3_floodfill.dir/rule
+.PHONY : applications/CMakeFiles/3_floodfill.dir/rule
+
+# Convenience name for target.
+3_floodfill: applications/CMakeFiles/3_floodfill.dir/rule
+
+.PHONY : 3_floodfill
+
+# fast build rule for target.
+3_floodfill/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/build
+.PHONY : 3_floodfill/fast
+
+# Convenience name for target.
+applications/CMakeFiles/4_histogram.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/4_histogram.dir/rule
+.PHONY : applications/CMakeFiles/4_histogram.dir/rule
+
+# Convenience name for target.
+4_histogram: applications/CMakeFiles/4_histogram.dir/rule
+
+.PHONY : 4_histogram
+
+# fast build rule for target.
+4_histogram/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/build
+.PHONY : 4_histogram/fast
 
 2_2regions.o: 2_2regions.cpp.o
 
@@ -283,6 +298,60 @@ hello/fast:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2trocaregioes.dir/build.make applications/CMakeFiles/2_2trocaregioes.dir/2_2trocaregioes.cpp.s
 .PHONY : 2_2trocaregioes.cpp.s
 
+3_floodfill.o: 3_floodfill.cpp.o
+
+.PHONY : 3_floodfill.o
+
+# target to build an object file
+3_floodfill.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/3_floodfill.cpp.o
+.PHONY : 3_floodfill.cpp.o
+
+3_floodfill.i: 3_floodfill.cpp.i
+
+.PHONY : 3_floodfill.i
+
+# target to preprocess a source file
+3_floodfill.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/3_floodfill.cpp.i
+.PHONY : 3_floodfill.cpp.i
+
+3_floodfill.s: 3_floodfill.cpp.s
+
+.PHONY : 3_floodfill.s
+
+# target to generate assembly for a file
+3_floodfill.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/3_floodfill.cpp.s
+.PHONY : 3_floodfill.cpp.s
+
+4_histogram.o: 4_histogram.cpp.o
+
+.PHONY : 4_histogram.o
+
+# target to build an object file
+4_histogram.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/4_histogram.cpp.o
+.PHONY : 4_histogram.cpp.o
+
+4_histogram.i: 4_histogram.cpp.i
+
+.PHONY : 4_histogram.i
+
+# target to preprocess a source file
+4_histogram.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/4_histogram.cpp.i
+.PHONY : 4_histogram.cpp.i
+
+4_histogram.s: 4_histogram.cpp.s
+
+.PHONY : 4_histogram.s
+
+# target to generate assembly for a file
+4_histogram.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/4_histogram.cpp.s
+.PHONY : 4_histogram.cpp.s
+
 hello.o: hello.cpp.o
 
 .PHONY : hello.o
@@ -309,33 +378,6 @@ hello.s: hello.cpp.s
 hello.cpp.s:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/hello.cpp.s
 .PHONY : hello.cpp.s
-
-labeling.o: labeling.cpp.o
-
-.PHONY : labeling.o
-
-# target to build an object file
-labeling.cpp.o:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/labeling.cpp.o
-.PHONY : labeling.cpp.o
-
-labeling.i: labeling.cpp.i
-
-.PHONY : labeling.i
-
-# target to preprocess a source file
-labeling.cpp.i:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/labeling.cpp.i
-.PHONY : labeling.cpp.i
-
-labeling.s: labeling.cpp.s
-
-.PHONY : labeling.s
-
-# target to generate assembly for a file
-labeling.cpp.s:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/labeling.cpp.s
-.PHONY : labeling.cpp.s
 
 pixels.o: pixels.cpp.o
 
@@ -370,13 +412,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... 2_2regions"
 	@echo "... pixels"
-	@echo "... labeling"
 	@echo "... 2_2trocaregioes"
 	@echo "... rebuild_cache"
 	@echo "... hello"
+	@echo "... 3_floodfill"
+	@echo "... install"
+	@echo "... 4_histogram"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
@@ -387,12 +430,15 @@ help:
 	@echo "... 2_2trocaregioes.o"
 	@echo "... 2_2trocaregioes.i"
 	@echo "... 2_2trocaregioes.s"
+	@echo "... 3_floodfill.o"
+	@echo "... 3_floodfill.i"
+	@echo "... 3_floodfill.s"
+	@echo "... 4_histogram.o"
+	@echo "... 4_histogram.i"
+	@echo "... 4_histogram.s"
 	@echo "... hello.o"
 	@echo "... hello.i"
 	@echo "... hello.s"
-	@echo "... labeling.o"
-	@echo "... labeling.i"
-	@echo "... labeling.s"
 	@echo "... pixels.o"
 	@echo "... pixels.i"
 	@echo "... pixels.s"

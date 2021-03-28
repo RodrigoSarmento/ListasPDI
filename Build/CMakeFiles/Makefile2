@@ -84,7 +84,7 @@ utils/preinstall:
 utils/CMakeFiles/listas_utils.dir/all:
 	$(MAKE) -f utils/CMakeFiles/listas_utils.dir/build.make utils/CMakeFiles/listas_utils.dir/depend
 	$(MAKE) -f utils/CMakeFiles/listas_utils.dir/build.make utils/CMakeFiles/listas_utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=9,10 "Built target listas_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=11,12 "Built target listas_utils"
 .PHONY : utils/CMakeFiles/listas_utils.dir/all
 
 # Include target in all.
@@ -120,18 +120,20 @@ clean: utils/CMakeFiles/listas_utils.dir/clean
 # Convenience name for "all" pass in the directory.
 applications/all: applications/CMakeFiles/2_2regions.dir/all
 applications/all: applications/CMakeFiles/pixels.dir/all
-applications/all: applications/CMakeFiles/labeling.dir/all
 applications/all: applications/CMakeFiles/2_2trocaregioes.dir/all
 applications/all: applications/CMakeFiles/hello.dir/all
+applications/all: applications/CMakeFiles/3_floodfill.dir/all
+applications/all: applications/CMakeFiles/4_histogram.dir/all
 
 .PHONY : applications/all
 
 # Convenience name for "clean" pass in the directory.
 applications/clean: applications/CMakeFiles/2_2regions.dir/clean
 applications/clean: applications/CMakeFiles/pixels.dir/clean
-applications/clean: applications/CMakeFiles/labeling.dir/clean
 applications/clean: applications/CMakeFiles/2_2trocaregioes.dir/clean
 applications/clean: applications/CMakeFiles/hello.dir/clean
+applications/clean: applications/CMakeFiles/3_floodfill.dir/clean
+applications/clean: applications/CMakeFiles/4_histogram.dir/clean
 
 .PHONY : applications/clean
 
@@ -184,7 +186,7 @@ clean: applications/CMakeFiles/2_2regions.dir/clean
 applications/CMakeFiles/pixels.dir/all:
 	$(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/depend
 	$(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=11,12 "Built target pixels"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=13,14 "Built target pixels"
 .PHONY : applications/CMakeFiles/pixels.dir/all
 
 # Include target in all.
@@ -211,43 +213,6 @@ applications/CMakeFiles/pixels.dir/clean:
 
 # clean rule for target.
 clean: applications/CMakeFiles/pixels.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target applications/CMakeFiles/labeling.dir
-
-# All Build rule for target.
-applications/CMakeFiles/labeling.dir/all: utils/CMakeFiles/listas_utils.dir/all
-	$(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/depend
-	$(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=7,8 "Built target labeling"
-.PHONY : applications/CMakeFiles/labeling.dir/all
-
-# Include target in all.
-all: applications/CMakeFiles/labeling.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-applications/CMakeFiles/labeling.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/labeling.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 0
-.PHONY : applications/CMakeFiles/labeling.dir/rule
-
-# Convenience name for target.
-labeling: applications/CMakeFiles/labeling.dir/rule
-
-.PHONY : labeling
-
-# clean rule for target.
-applications/CMakeFiles/labeling.dir/clean:
-	$(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/clean
-.PHONY : applications/CMakeFiles/labeling.dir/clean
-
-# clean rule for target.
-clean: applications/CMakeFiles/labeling.dir/clean
 
 .PHONY : clean
 
@@ -295,7 +260,7 @@ clean: applications/CMakeFiles/2_2trocaregioes.dir/clean
 applications/CMakeFiles/hello.dir/all:
 	$(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/depend
 	$(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=5,6 "Built target hello"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=9,10 "Built target hello"
 .PHONY : applications/CMakeFiles/hello.dir/all
 
 # Include target in all.
@@ -322,6 +287,80 @@ applications/CMakeFiles/hello.dir/clean:
 
 # clean rule for target.
 clean: applications/CMakeFiles/hello.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target applications/CMakeFiles/3_floodfill.dir
+
+# All Build rule for target.
+applications/CMakeFiles/3_floodfill.dir/all: utils/CMakeFiles/listas_utils.dir/all
+	$(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/depend
+	$(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=5,6 "Built target 3_floodfill"
+.PHONY : applications/CMakeFiles/3_floodfill.dir/all
+
+# Include target in all.
+all: applications/CMakeFiles/3_floodfill.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+applications/CMakeFiles/3_floodfill.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/3_floodfill.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 0
+.PHONY : applications/CMakeFiles/3_floodfill.dir/rule
+
+# Convenience name for target.
+3_floodfill: applications/CMakeFiles/3_floodfill.dir/rule
+
+.PHONY : 3_floodfill
+
+# clean rule for target.
+applications/CMakeFiles/3_floodfill.dir/clean:
+	$(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/clean
+.PHONY : applications/CMakeFiles/3_floodfill.dir/clean
+
+# clean rule for target.
+clean: applications/CMakeFiles/3_floodfill.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target applications/CMakeFiles/4_histogram.dir
+
+# All Build rule for target.
+applications/CMakeFiles/4_histogram.dir/all: utils/CMakeFiles/listas_utils.dir/all
+	$(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/depend
+	$(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=7,8 "Built target 4_histogram"
+.PHONY : applications/CMakeFiles/4_histogram.dir/all
+
+# Include target in all.
+all: applications/CMakeFiles/4_histogram.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+applications/CMakeFiles/4_histogram.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/4_histogram.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 0
+.PHONY : applications/CMakeFiles/4_histogram.dir/rule
+
+# Convenience name for target.
+4_histogram: applications/CMakeFiles/4_histogram.dir/rule
+
+.PHONY : 4_histogram
+
+# clean rule for target.
+applications/CMakeFiles/4_histogram.dir/clean:
+	$(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/clean
+.PHONY : applications/CMakeFiles/4_histogram.dir/clean
+
+# clean rule for target.
+clean: applications/CMakeFiles/4_histogram.dir/clean
 
 .PHONY : clean
 

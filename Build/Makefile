@@ -194,19 +194,6 @@ pixels/fast:
 .PHONY : pixels/fast
 
 #=============================================================================
-# Target rules for targets named labeling
-
-# Build rule for target.
-labeling: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 labeling
-.PHONY : labeling
-
-# fast build rule for target.
-labeling/fast:
-	$(MAKE) -f applications/CMakeFiles/labeling.dir/build.make applications/CMakeFiles/labeling.dir/build
-.PHONY : labeling/fast
-
-#=============================================================================
 # Target rules for targets named 2_2trocaregioes
 
 # Build rule for target.
@@ -232,6 +219,32 @@ hello/fast:
 	$(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/build
 .PHONY : hello/fast
 
+#=============================================================================
+# Target rules for targets named 3_floodfill
+
+# Build rule for target.
+3_floodfill: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 3_floodfill
+.PHONY : 3_floodfill
+
+# fast build rule for target.
+3_floodfill/fast:
+	$(MAKE) -f applications/CMakeFiles/3_floodfill.dir/build.make applications/CMakeFiles/3_floodfill.dir/build
+.PHONY : 3_floodfill/fast
+
+#=============================================================================
+# Target rules for targets named 4_histogram
+
+# Build rule for target.
+4_histogram: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 4_histogram
+.PHONY : 4_histogram
+
+# fast build rule for target.
+4_histogram/fast:
+	$(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/build
+.PHONY : 4_histogram/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -247,9 +260,10 @@ help:
 	@echo "... listas_utils"
 	@echo "... 2_2regions"
 	@echo "... pixels"
-	@echo "... labeling"
 	@echo "... 2_2trocaregioes"
 	@echo "... hello"
+	@echo "... 3_floodfill"
+	@echo "... 4_histogram"
 .PHONY : help
 
 
