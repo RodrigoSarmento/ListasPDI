@@ -6,12 +6,9 @@ using namespace cv;
 using namespace std;
 
 Mat mask(3, 3, CV_32F), mask1;
-Mat imageFiltered, result;
-Mat image1, image2;
+Mat image1, image2, imageFiltered;
 
-double alfa;
-double l1, l2;
-
+double alpha, l1, l2;
 int y_max;
 int height = 0, center = 0, decayValue = 1;
 int barRegion = 0, decaySlider = 0, barCenter = 0;
@@ -57,10 +54,8 @@ int main(int argc, char* argv[])
 
     image2 = image1.clone();
 
+    // Blur Image
     for (int i = 1; i < 10; i = i + 2) { GaussianBlur(image2, imageFiltered, Size(i, i), 0, 0); }
-
-    // A variável 'result' guarda a imagem borrada
-    imageFiltered.convertTo(result, CV_8U);
 
     namedWindow("Focus", 1);
 
@@ -109,9 +104,10 @@ void calculateFocus()
     l1 = center - height / 2;
     l2 = center + height / 2;
 
-    for (int i = 0; i < result.size().height; i++) {
-        alfa = 0.5 * (tanh((i - l1) / decayValue) - tanh((i - l2) / decayValue));
-        addWeighted(image1.row(i), alfa, result.row(i), 1.0 - alfa, 0.0, image2.row(i));
+    for (int i = 0; i < imageFiltered.size().height; i++) {
+        // alpha function
+        alpha = 0.5 * (tanh((i - l1) / decayValue) - tanh((i - l2) / decayValue));
+        addWeighted(image1.row(i), alpha, imageFiltered.row(i), 1.0 - alpha, 0.0, image2.row(i));
     }
 
     imshow("Focus", image2);
