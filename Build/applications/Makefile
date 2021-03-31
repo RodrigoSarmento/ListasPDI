@@ -67,6 +67,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -110,17 +121,6 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -273,6 +273,21 @@ applications/CMakeFiles/4_histogram.dir/rule:
 4_histogram/fast:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/build
 .PHONY : 4_histogram/fast
+
+# Convenience name for target.
+applications/CMakeFiles/6_tilt.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/6_tilt.dir/rule
+.PHONY : applications/CMakeFiles/6_tilt.dir/rule
+
+# Convenience name for target.
+6_tilt: applications/CMakeFiles/6_tilt.dir/rule
+
+.PHONY : 6_tilt
+
+# fast build rule for target.
+6_tilt/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt.dir/build.make applications/CMakeFiles/6_tilt.dir/build
+.PHONY : 6_tilt/fast
 
 2_2regions.o: 2_2regions.cpp.o
 
@@ -436,6 +451,33 @@ applications/CMakeFiles/4_histogram.dir/rule:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/5_filtroEspacial.dir/build.make applications/CMakeFiles/5_filtroEspacial.dir/5_filtroEspacial.cpp.s
 .PHONY : 5_filtroEspacial.cpp.s
 
+6_tilt.o: 6_tilt.cpp.o
+
+.PHONY : 6_tilt.o
+
+# target to build an object file
+6_tilt.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt.dir/build.make applications/CMakeFiles/6_tilt.dir/6_tilt.cpp.o
+.PHONY : 6_tilt.cpp.o
+
+6_tilt.i: 6_tilt.cpp.i
+
+.PHONY : 6_tilt.i
+
+# target to preprocess a source file
+6_tilt.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt.dir/build.make applications/CMakeFiles/6_tilt.dir/6_tilt.cpp.i
+.PHONY : 6_tilt.cpp.i
+
+6_tilt.s: 6_tilt.cpp.s
+
+.PHONY : 6_tilt.s
+
+# target to generate assembly for a file
+6_tilt.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt.dir/build.make applications/CMakeFiles/6_tilt.dir/6_tilt.cpp.s
+.PHONY : 6_tilt.cpp.s
+
 hello.o: hello.cpp.o
 
 .PHONY : hello.o
@@ -497,6 +539,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install/local"
 	@echo "... 2_2regions"
 	@echo "... pixels"
 	@echo "... 4_motionDetector"
@@ -507,9 +550,9 @@ help:
 	@echo "... 5_filtroEspacial"
 	@echo "... install"
 	@echo "... 4_histogram"
+	@echo "... 6_tilt"
 	@echo "... list_install_components"
 	@echo "... install/strip"
-	@echo "... install/local"
 	@echo "... 2_2regions.o"
 	@echo "... 2_2regions.i"
 	@echo "... 2_2regions.s"
@@ -528,6 +571,9 @@ help:
 	@echo "... 5_filtroEspacial.o"
 	@echo "... 5_filtroEspacial.i"
 	@echo "... 5_filtroEspacial.s"
+	@echo "... 6_tilt.o"
+	@echo "... 6_tilt.i"
+	@echo "... 6_tilt.s"
 	@echo "... hello.o"
 	@echo "... hello.i"
 	@echo "... hello.s"

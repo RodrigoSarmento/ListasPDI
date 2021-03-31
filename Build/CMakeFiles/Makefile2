@@ -84,7 +84,7 @@ utils/preinstall:
 utils/CMakeFiles/listas_utils.dir/all:
 	$(MAKE) -f utils/CMakeFiles/listas_utils.dir/build.make utils/CMakeFiles/listas_utils.dir/depend
 	$(MAKE) -f utils/CMakeFiles/listas_utils.dir/build.make utils/CMakeFiles/listas_utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=15,16 "Built target listas_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=17,18 "Built target listas_utils"
 .PHONY : utils/CMakeFiles/listas_utils.dir/all
 
 # Include target in all.
@@ -126,6 +126,7 @@ applications/all: applications/CMakeFiles/2_2trocaregioes.dir/all
 applications/all: applications/CMakeFiles/hello.dir/all
 applications/all: applications/CMakeFiles/5_filtroEspacial.dir/all
 applications/all: applications/CMakeFiles/4_histogram.dir/all
+applications/all: applications/CMakeFiles/6_tilt.dir/all
 
 .PHONY : applications/all
 
@@ -138,6 +139,7 @@ applications/clean: applications/CMakeFiles/2_2trocaregioes.dir/clean
 applications/clean: applications/CMakeFiles/hello.dir/clean
 applications/clean: applications/CMakeFiles/5_filtroEspacial.dir/clean
 applications/clean: applications/CMakeFiles/4_histogram.dir/clean
+applications/clean: applications/CMakeFiles/6_tilt.dir/clean
 
 .PHONY : applications/clean
 
@@ -190,7 +192,7 @@ clean: applications/CMakeFiles/2_2regions.dir/clean
 applications/CMakeFiles/pixels.dir/all:
 	$(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/depend
 	$(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=17,18 "Built target pixels"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=19,20 "Built target pixels"
 .PHONY : applications/CMakeFiles/pixels.dir/all
 
 # Include target in all.
@@ -338,7 +340,7 @@ clean: applications/CMakeFiles/2_2trocaregioes.dir/clean
 applications/CMakeFiles/hello.dir/all:
 	$(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/depend
 	$(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=13,14 "Built target hello"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=15,16 "Built target hello"
 .PHONY : applications/CMakeFiles/hello.dir/all
 
 # Include target in all.
@@ -439,6 +441,43 @@ applications/CMakeFiles/4_histogram.dir/clean:
 
 # clean rule for target.
 clean: applications/CMakeFiles/4_histogram.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target applications/CMakeFiles/6_tilt.dir
+
+# All Build rule for target.
+applications/CMakeFiles/6_tilt.dir/all: utils/CMakeFiles/listas_utils.dir/all
+	$(MAKE) -f applications/CMakeFiles/6_tilt.dir/build.make applications/CMakeFiles/6_tilt.dir/depend
+	$(MAKE) -f applications/CMakeFiles/6_tilt.dir/build.make applications/CMakeFiles/6_tilt.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=13,14 "Built target 6_tilt"
+.PHONY : applications/CMakeFiles/6_tilt.dir/all
+
+# Include target in all.
+all: applications/CMakeFiles/6_tilt.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+applications/CMakeFiles/6_tilt.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/6_tilt.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 0
+.PHONY : applications/CMakeFiles/6_tilt.dir/rule
+
+# Convenience name for target.
+6_tilt: applications/CMakeFiles/6_tilt.dir/rule
+
+.PHONY : 6_tilt
+
+# clean rule for target.
+applications/CMakeFiles/6_tilt.dir/clean:
+	$(MAKE) -f applications/CMakeFiles/6_tilt.dir/build.make applications/CMakeFiles/6_tilt.dir/clean
+.PHONY : applications/CMakeFiles/6_tilt.dir/clean
+
+# clean rule for target.
+clean: applications/CMakeFiles/6_tilt.dir/clean
 
 .PHONY : clean
 

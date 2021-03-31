@@ -271,6 +271,19 @@ hello/fast:
 	$(MAKE) -f applications/CMakeFiles/4_histogram.dir/build.make applications/CMakeFiles/4_histogram.dir/build
 .PHONY : 4_histogram/fast
 
+#=============================================================================
+# Target rules for targets named 6_tilt
+
+# Build rule for target.
+6_tilt: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 6_tilt
+.PHONY : 6_tilt
+
+# fast build rule for target.
+6_tilt/fast:
+	$(MAKE) -f applications/CMakeFiles/6_tilt.dir/build.make applications/CMakeFiles/6_tilt.dir/build
+.PHONY : 6_tilt/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -292,6 +305,7 @@ help:
 	@echo "... hello"
 	@echo "... 5_filtroEspacial"
 	@echo "... 4_histogram"
+	@echo "... 6_tilt"
 .PHONY : help
 
 

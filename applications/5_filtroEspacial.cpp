@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
     float laplacian[] = {0, -1, 0, -1, 4, -1, 0, -1, 0};
     float boost[] = {0, -1, 0, -1, 5.2, -1, 0, -1, 0};
 
-    Mat frame, framegray, frame32f, frameFiltered;
+    Mat frame, framegray, frame32f, frameFiltered, frameTemp;
     Mat mask(3, 3, CV_32F);
     Mat result;
     double width, height;
@@ -61,7 +61,10 @@ int main(int argc, char* argv[])
         flip(framegray, framegray, 1);
         imshow("original", framegray);
         framegray.convertTo(frame32f, CV_32F);
-        filter2D(frame32f, frameFiltered, frame32f.depth(), mask, Point(1, 1), 0);
+        filter2D(frame32f, frameTemp, frame32f.depth(), Mat(3, 3, CV_32F, gauss), Point(1, 1), 0);
+        if (absolut) { frameTemp = abs(frameTemp); }
+
+        filter2D(frameTemp, frameFiltered, frameTemp.depth(), mask, Point(1, 1), 0);
         if (absolut) { frameFiltered = abs(frameFiltered); }
 
         frameFiltered.convertTo(result, CV_8U);
@@ -98,3 +101,5 @@ int main(int argc, char* argv[])
     }
     return 0;
 }
+
+// Checar com o professor
