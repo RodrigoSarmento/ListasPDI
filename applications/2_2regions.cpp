@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
     param_loader.checkAndGetString("q2_image", image_file);
 
     image = imread(image_file, IMREAD_COLOR);
-    if (!image.data) cout << "nao abriu " << image_file << endl;
+    if (!image.data) cout << "Couldn't open image" << image_file << endl;
 
     for (int i = p1_x; i < p2_x; i++) {
         for (int j = p1_y; j < p2_y; j++) {
@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
         }
     }
 
-    imshow("janela", image);
+    imshow("image", image);
     waitKey();
     return 0;
 }

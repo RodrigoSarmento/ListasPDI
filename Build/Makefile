@@ -181,6 +181,19 @@ listas_utils/fast:
 .PHONY : 2_2regions/fast
 
 #=============================================================================
+# Target rules for targets named 6_tilt_video
+
+# Build rule for target.
+6_tilt_video: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 6_tilt_video
+.PHONY : 6_tilt_video
+
+# fast build rule for target.
+6_tilt_video/fast:
+	$(MAKE) -f applications/CMakeFiles/6_tilt_video.dir/build.make applications/CMakeFiles/6_tilt_video.dir/build
+.PHONY : 6_tilt_video/fast
+
+#=============================================================================
 # Target rules for targets named pixels
 
 # Build rule for target.
@@ -298,6 +311,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... listas_utils"
 	@echo "... 2_2regions"
+	@echo "... 6_tilt_video"
 	@echo "... pixels"
 	@echo "... 4_motionDetector"
 	@echo "... 3_floodfill"

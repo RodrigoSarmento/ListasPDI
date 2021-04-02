@@ -13,7 +13,10 @@
 /home/sarmento/LIB/ListasPDI/Build/utils/CMakeFiles/install/local.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/edit_cache.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/install/local.dir
+/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/list_install_components.dir
+/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/install/strip.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/2_2regions.dir
+/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/6_tilt_video.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/pixels.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/4_motionDetector.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/3_floodfill.dir
@@ -24,5 +27,3 @@
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/install.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/4_histogram.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/6_tilt.dir
-/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/list_install_components.dir
-/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/install/strip.dir

@@ -54,6 +54,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "utils/CMakeFiles/listas_utils.dir/DependInfo.cmake"
   "applications/CMakeFiles/2_2regions.dir/DependInfo.cmake"
+  "applications/CMakeFiles/6_tilt_video.dir/DependInfo.cmake"
   "applications/CMakeFiles/pixels.dir/DependInfo.cmake"
   "applications/CMakeFiles/4_motionDetector.dir/DependInfo.cmake"
   "applications/CMakeFiles/3_floodfill.dir/DependInfo.cmake"

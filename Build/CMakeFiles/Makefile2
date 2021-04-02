@@ -84,7 +84,7 @@ utils/preinstall:
 utils/CMakeFiles/listas_utils.dir/all:
 	$(MAKE) -f utils/CMakeFiles/listas_utils.dir/build.make utils/CMakeFiles/listas_utils.dir/depend
 	$(MAKE) -f utils/CMakeFiles/listas_utils.dir/build.make utils/CMakeFiles/listas_utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=17,18 "Built target listas_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=19,20 "Built target listas_utils"
 .PHONY : utils/CMakeFiles/listas_utils.dir/all
 
 # Include target in all.
@@ -119,6 +119,7 @@ clean: utils/CMakeFiles/listas_utils.dir/clean
 
 # Convenience name for "all" pass in the directory.
 applications/all: applications/CMakeFiles/2_2regions.dir/all
+applications/all: applications/CMakeFiles/6_tilt_video.dir/all
 applications/all: applications/CMakeFiles/pixels.dir/all
 applications/all: applications/CMakeFiles/4_motionDetector.dir/all
 applications/all: applications/CMakeFiles/3_floodfill.dir/all
@@ -132,6 +133,7 @@ applications/all: applications/CMakeFiles/6_tilt.dir/all
 
 # Convenience name for "clean" pass in the directory.
 applications/clean: applications/CMakeFiles/2_2regions.dir/clean
+applications/clean: applications/CMakeFiles/6_tilt_video.dir/clean
 applications/clean: applications/CMakeFiles/pixels.dir/clean
 applications/clean: applications/CMakeFiles/4_motionDetector.dir/clean
 applications/clean: applications/CMakeFiles/3_floodfill.dir/clean
@@ -186,13 +188,50 @@ clean: applications/CMakeFiles/2_2regions.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target applications/CMakeFiles/6_tilt_video.dir
+
+# All Build rule for target.
+applications/CMakeFiles/6_tilt_video.dir/all: utils/CMakeFiles/listas_utils.dir/all
+	$(MAKE) -f applications/CMakeFiles/6_tilt_video.dir/build.make applications/CMakeFiles/6_tilt_video.dir/depend
+	$(MAKE) -f applications/CMakeFiles/6_tilt_video.dir/build.make applications/CMakeFiles/6_tilt_video.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=15,16 "Built target 6_tilt_video"
+.PHONY : applications/CMakeFiles/6_tilt_video.dir/all
+
+# Include target in all.
+all: applications/CMakeFiles/6_tilt_video.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+applications/CMakeFiles/6_tilt_video.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/6_tilt_video.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sarmento/LIB/ListasPDI/Build/CMakeFiles 0
+.PHONY : applications/CMakeFiles/6_tilt_video.dir/rule
+
+# Convenience name for target.
+6_tilt_video: applications/CMakeFiles/6_tilt_video.dir/rule
+
+.PHONY : 6_tilt_video
+
+# clean rule for target.
+applications/CMakeFiles/6_tilt_video.dir/clean:
+	$(MAKE) -f applications/CMakeFiles/6_tilt_video.dir/build.make applications/CMakeFiles/6_tilt_video.dir/clean
+.PHONY : applications/CMakeFiles/6_tilt_video.dir/clean
+
+# clean rule for target.
+clean: applications/CMakeFiles/6_tilt_video.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target applications/CMakeFiles/pixels.dir
 
 # All Build rule for target.
 applications/CMakeFiles/pixels.dir/all:
 	$(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/depend
 	$(MAKE) -f applications/CMakeFiles/pixels.dir/build.make applications/CMakeFiles/pixels.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=19,20 "Built target pixels"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=21,22 "Built target pixels"
 .PHONY : applications/CMakeFiles/pixels.dir/all
 
 # Include target in all.
@@ -340,7 +379,7 @@ clean: applications/CMakeFiles/2_2trocaregioes.dir/clean
 applications/CMakeFiles/hello.dir/all:
 	$(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/depend
 	$(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=15,16 "Built target hello"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sarmento/LIB/ListasPDI/Build/CMakeFiles --progress-num=17,18 "Built target hello"
 .PHONY : applications/CMakeFiles/hello.dir/all
 
 # Include target in all.

@@ -1,6 +1,8 @@
 %YAML:1.0
 q2_image: "../../assets/biel.png" 
+q3_image: "../../assets/bolhas.png"
 q4_video: "../../assets/video.mp4"
 q6_tilt1: "../../assets/blend1.jpg"
 q6_tilt2: "../../assets/blend2.jpg"
 q6_exercise: "../../assets/image_frasqueirao.png"
+q6_tilt_video: "../../assets/people.mp4"

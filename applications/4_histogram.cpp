@@ -7,18 +7,14 @@ using namespace cv;
 
 int main(int argc, char* argv[])
 {
-    Mat image;
+    Mat image, hist;
     int width, height;
     vector<Mat> planes;
-    Mat hist;
-    int nbins = 64;
     float range[] = {0, 255};
     const float* histrange = {range};
-    bool uniform = true;
-    bool acummulate = false;
-    int key;
+    bool uniform = true, accumulate = false;
     string video_name;
-    int channels[] = {0};
+    int channels[] = {0}, key, nbins = 64;
 
     if (argc != 2) {
         printf("Couldn't load all parameter, use example of use: ./4_histogram config_file\n");
@@ -40,8 +36,8 @@ int main(int argc, char* argv[])
     width = cap.get(CAP_PROP_FRAME_WIDTH);
     height = cap.get(CAP_PROP_FRAME_HEIGHT);
 
-    cout << "largura = " << width << endl;
-    cout << "altura  = " << height << endl;
+    cout << "width = " << width << endl;
+    cout << "height  = " << height << endl;
 
     int histw = nbins, histh = nbins / 2;
     Mat histImg(histh, histw, CV_8UC3, Scalar(0, 0, 0));
@@ -55,7 +51,7 @@ int main(int argc, char* argv[])
         // Converting image to gray
         cvtColor(image, image, COLOR_BGR2GRAY);
 
-        calcHist(&image, 1, channels, Mat(), hist, 1, &nbins, &histrange, uniform, acummulate);
+        calcHist(&image, 1, channels, Mat(), hist, 1, &nbins, &histrange, uniform, accumulate);
         normalize(hist, hist, 0, histImg.rows, NORM_MINMAX, -1, Mat());
 
         histImg.setTo(Scalar(0));

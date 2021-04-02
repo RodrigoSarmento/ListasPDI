@@ -63,35 +63,31 @@ int main(int argc, char* argv[])
     createTrackbar(TrackbarName, "Focus", &decaySlider, 100, setDecayFocus);
     setDecayFocus(decaySlider, 0);
 
-    sprintf(TrackbarName, "Height");
-    createTrackbar(TrackbarName, "Focus", &barRegion, 100, setCenterHeight);
-    setCenterHeight(barRegion, 0);
-
     sprintf(TrackbarName, "Center Position");
     createTrackbar(TrackbarName, "Focus", &barCenter, 100, setCenterPosition);
     setCenterPosition(barCenter, 0);
+
+    sprintf(TrackbarName, "Height");
+    createTrackbar(TrackbarName, "Focus", &barRegion, 100, setCenterHeight);
+    setCenterHeight(barRegion, 0);
 
     waitKey();
     return 0;
 }
 
-// Ajuste para regular a força de decayValue da região borrada
 void setDecayFocus(int, void*)
 {
-    // O decayValue mínimo será 1 devido o cálculo do alfa
+    // Min decay is 1
     decayValue = (double)decaySlider + 1;
     calculateFocus();
 }
 
-// Ajuste para regular a height da região central que entrará em foco
 void setCenterHeight(int, void*)
 {
-    // Calculo do center da imagem desejado
     height = (double)(barRegion * y_max) / 100;
     calculateFocus();
 }
 
-// Ajuste para regular a posição vertical do center da região que entrará em foco
 void setCenterPosition(int, void*)
 {
     center = (double)(barCenter * y_max) / 100;
@@ -100,12 +96,12 @@ void setCenterPosition(int, void*)
 
 void calculateFocus()
 {
-    // Calculo de l1 e l2 (linhas cujo valor de αlfa assume valor em torno de 0.5)
+    // Calculate the l1 and l2 of function.
     l1 = center - height / 2;
     l2 = center + height / 2;
 
     for (int i = 0; i < imageFiltered.size().height; i++) {
-        // alpha function
+        // Alpha function
         alpha = 0.5 * (tanh((i - l1) / decayValue) - tanh((i - l2) / decayValue));
         addWeighted(image1.row(i), alpha, imageFiltered.row(i), 1.0 - alpha, 0.0, image2.row(i));
     }
@@ -113,5 +109,3 @@ void calculateFocus()
     imshow("Focus", image2);
     imwrite("focusResult.png", image2);
 }
-
-void blurImage() {}

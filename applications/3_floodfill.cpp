@@ -1,3 +1,4 @@
+#include <config_loader.h>
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
@@ -11,18 +12,27 @@ int main(int argc, char* argv[])
     Mat image, realce;
     int width, height;
     int nobjects, nobjects_with_holes;
-
+    string image_file;
     Point p;
-    image = imread(argv[1], IMREAD_GRAYSCALE);
+
+    if (argc != 2) {
+        printf("Couldn't load all parameter, use example of use: ./3_floodfill config_file \n");
+        return 0;
+    }
+
+    ConfigLoader param_loader(argv[1]);
+    param_loader.checkAndGetString("q3_image", image_file);
+
+    image = imread(image_file, IMREAD_GRAYSCALE);
 
     if (!image.data) {
-        std::cout << "imagem nao carregou corretamente\n";
+        cout << "imagem nao carregou corretamente\n";
         return (-1);
     }
 
     width = image.cols;
     height = image.rows;
-    std::cout << width << "x" << height << std::endl;
+    cout << width << "x" << height << endl;
 
     p.x = 0;
     p.y = 0;
@@ -37,35 +47,35 @@ int main(int argc, char* argv[])
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             if (image.at<uchar>(i, j) == 255) {
-                // achou um objeto
+                // Found a bubble
                 nobjects++;
                 p.x = j;
                 p.y = i;
-                // preenche o objeto com o contador
-                cv::floodFill(image, p, 150);
-                cv::imshow("image", image);
-                cv::waitKey();
+                // Using floodFill
+                floodFill(image, p, 150);
+                imshow("image", image);
+                waitKey();
             }
         }
     }
 
     // Inverting the color, now the black background will be white
-    cv::floodFill(image, cv::Point(0, 0), 255);
-    cv::imshow("image", image);
-    cv::waitKey();
+    floodFill(image, Point(0, 0), 255);
+    imshow("image", image);
+    waitKey();
 
     // What is left as black are the bubles with holes, so lets find those
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             if (image.at<uchar>(i, j) == 0) {
-                cv::imshow("image", image);
-                cv::waitKey();
-                // achou um objeto
+                imshow("image", image);
+                waitKey();
+                // Found a bubble
                 nobjects_with_holes++;
                 p.x = j;
                 p.y = i;
-                // preenche o objeto com o contador
-                cv::floodFill(image, p, 255);
+                // Using floodFill
+                floodFill(image, p, 255);
             }
         }
     }
@@ -87,13 +97,8 @@ void cleanEdges(Mat& image, int width, int height)
 
     for (int j = 0; j < width; j++) {
         if (image.at<uchar>(i, j) == 255) {
-            cout << "entrou\n";
-            // circle(image, Point(j, 0), 5, Scalar(150, 0, 0));
-
-            // achou um objeto
             p.x = j;
             p.y = i;
-            // preenche o objeto com o contador
             floodFill(image, p, 0);
         }
         if (j == width - 1) {
@@ -106,13 +111,8 @@ void cleanEdges(Mat& image, int width, int height)
     i = 0;
     for (int j = 0; j < height; j++) {
         if (image.at<uchar>(j, i) == 255) {
-            cout << "entrou\n";
-            // circle(image, Point(j, 0), 5, Scalar(150, 0, 0));
-
-            // achou um objeto
             p.x = i;
             p.y = j;
-            // preenche o objeto com o contador
             floodFill(image, p, 0);
         }
         if (j == height - 1) {

@@ -78,6 +78,27 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"bin\" \"shlib\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -100,27 +121,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"bin\" \"shlib\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,21 @@ applications/CMakeFiles/2_2regions.dir/rule:
 2_2regions/fast:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2regions.dir/build.make applications/CMakeFiles/2_2regions.dir/build
 .PHONY : 2_2regions/fast
+
+# Convenience name for target.
+applications/CMakeFiles/6_tilt_video.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/6_tilt_video.dir/rule
+.PHONY : applications/CMakeFiles/6_tilt_video.dir/rule
+
+# Convenience name for target.
+6_tilt_video: applications/CMakeFiles/6_tilt_video.dir/rule
+
+.PHONY : 6_tilt_video
+
+# fast build rule for target.
+6_tilt_video/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt_video.dir/build.make applications/CMakeFiles/6_tilt_video.dir/build
+.PHONY : 6_tilt_video/fast
 
 # Convenience name for target.
 applications/CMakeFiles/pixels.dir/rule:
@@ -478,6 +493,33 @@ applications/CMakeFiles/6_tilt.dir/rule:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt.dir/build.make applications/CMakeFiles/6_tilt.dir/6_tilt.cpp.s
 .PHONY : 6_tilt.cpp.s
 
+6_tilt_video.o: 6_tilt_video.cpp.o
+
+.PHONY : 6_tilt_video.o
+
+# target to build an object file
+6_tilt_video.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt_video.dir/build.make applications/CMakeFiles/6_tilt_video.dir/6_tilt_video.cpp.o
+.PHONY : 6_tilt_video.cpp.o
+
+6_tilt_video.i: 6_tilt_video.cpp.i
+
+.PHONY : 6_tilt_video.i
+
+# target to preprocess a source file
+6_tilt_video.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt_video.dir/build.make applications/CMakeFiles/6_tilt_video.dir/6_tilt_video.cpp.i
+.PHONY : 6_tilt_video.cpp.i
+
+6_tilt_video.s: 6_tilt_video.cpp.s
+
+.PHONY : 6_tilt_video.s
+
+# target to generate assembly for a file
+6_tilt_video.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt_video.dir/build.make applications/CMakeFiles/6_tilt_video.dir/6_tilt_video.cpp.s
+.PHONY : 6_tilt_video.cpp.s
+
 hello.o: hello.cpp.o
 
 .PHONY : hello.o
@@ -540,7 +582,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... install/local"
+	@echo "... list_install_components"
+	@echo "... install/strip"
 	@echo "... 2_2regions"
+	@echo "... 6_tilt_video"
 	@echo "... pixels"
 	@echo "... 4_motionDetector"
 	@echo "... 3_floodfill"
@@ -551,8 +596,6 @@ help:
 	@echo "... install"
 	@echo "... 4_histogram"
 	@echo "... 6_tilt"
-	@echo "... list_install_components"
-	@echo "... install/strip"
 	@echo "... 2_2regions.o"
 	@echo "... 2_2regions.i"
 	@echo "... 2_2regions.s"
@@ -574,6 +617,9 @@ help:
 	@echo "... 6_tilt.o"
 	@echo "... 6_tilt.i"
 	@echo "... 6_tilt.s"
+	@echo "... 6_tilt_video.o"
+	@echo "... 6_tilt_video.i"
+	@echo "... 6_tilt_video.s"
 	@echo "... hello.o"
 	@echo "... hello.i"
 	@echo "... hello.s"
