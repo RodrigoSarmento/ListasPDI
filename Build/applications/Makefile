@@ -155,6 +155,36 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+applications/CMakeFiles/8_canny.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/8_canny.dir/rule
+.PHONY : applications/CMakeFiles/8_canny.dir/rule
+
+# Convenience name for target.
+8_canny: applications/CMakeFiles/8_canny.dir/rule
+
+.PHONY : 8_canny
+
+# fast build rule for target.
+8_canny/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/8_canny.dir/build.make applications/CMakeFiles/8_canny.dir/build
+.PHONY : 8_canny/fast
+
+# Convenience name for target.
+applications/CMakeFiles/7_filter_frequency.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/7_filter_frequency.dir/rule
+.PHONY : applications/CMakeFiles/7_filter_frequency.dir/rule
+
+# Convenience name for target.
+7_filter_frequency: applications/CMakeFiles/7_filter_frequency.dir/rule
+
+.PHONY : 7_filter_frequency
+
+# fast build rule for target.
+7_filter_frequency/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/7_filter_frequency.dir/build.make applications/CMakeFiles/7_filter_frequency.dir/build
+.PHONY : 7_filter_frequency/fast
+
+# Convenience name for target.
 applications/CMakeFiles/2_2regions.dir/rule:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/2_2regions.dir/rule
 .PHONY : applications/CMakeFiles/2_2regions.dir/rule
@@ -168,6 +198,21 @@ applications/CMakeFiles/2_2regions.dir/rule:
 2_2regions/fast:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/2_2regions.dir/build.make applications/CMakeFiles/2_2regions.dir/build
 .PHONY : 2_2regions/fast
+
+# Convenience name for target.
+applications/CMakeFiles/8_points.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/8_points.dir/rule
+.PHONY : applications/CMakeFiles/8_points.dir/rule
+
+# Convenience name for target.
+8_points: applications/CMakeFiles/8_points.dir/rule
+
+.PHONY : 8_points
+
+# fast build rule for target.
+8_points/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/8_points.dir/build.make applications/CMakeFiles/8_points.dir/build
+.PHONY : 8_points/fast
 
 # Convenience name for target.
 applications/CMakeFiles/6_tilt_video.dir/rule:
@@ -520,6 +565,87 @@ applications/CMakeFiles/6_tilt.dir/rule:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt_video.dir/build.make applications/CMakeFiles/6_tilt_video.dir/6_tilt_video.cpp.s
 .PHONY : 6_tilt_video.cpp.s
 
+7_filter_frequency.o: 7_filter_frequency.cpp.o
+
+.PHONY : 7_filter_frequency.o
+
+# target to build an object file
+7_filter_frequency.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/7_filter_frequency.dir/build.make applications/CMakeFiles/7_filter_frequency.dir/7_filter_frequency.cpp.o
+.PHONY : 7_filter_frequency.cpp.o
+
+7_filter_frequency.i: 7_filter_frequency.cpp.i
+
+.PHONY : 7_filter_frequency.i
+
+# target to preprocess a source file
+7_filter_frequency.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/7_filter_frequency.dir/build.make applications/CMakeFiles/7_filter_frequency.dir/7_filter_frequency.cpp.i
+.PHONY : 7_filter_frequency.cpp.i
+
+7_filter_frequency.s: 7_filter_frequency.cpp.s
+
+.PHONY : 7_filter_frequency.s
+
+# target to generate assembly for a file
+7_filter_frequency.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/7_filter_frequency.dir/build.make applications/CMakeFiles/7_filter_frequency.dir/7_filter_frequency.cpp.s
+.PHONY : 7_filter_frequency.cpp.s
+
+8_canny.o: 8_canny.cpp.o
+
+.PHONY : 8_canny.o
+
+# target to build an object file
+8_canny.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/8_canny.dir/build.make applications/CMakeFiles/8_canny.dir/8_canny.cpp.o
+.PHONY : 8_canny.cpp.o
+
+8_canny.i: 8_canny.cpp.i
+
+.PHONY : 8_canny.i
+
+# target to preprocess a source file
+8_canny.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/8_canny.dir/build.make applications/CMakeFiles/8_canny.dir/8_canny.cpp.i
+.PHONY : 8_canny.cpp.i
+
+8_canny.s: 8_canny.cpp.s
+
+.PHONY : 8_canny.s
+
+# target to generate assembly for a file
+8_canny.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/8_canny.dir/build.make applications/CMakeFiles/8_canny.dir/8_canny.cpp.s
+.PHONY : 8_canny.cpp.s
+
+8_points.o: 8_points.cpp.o
+
+.PHONY : 8_points.o
+
+# target to build an object file
+8_points.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/8_points.dir/build.make applications/CMakeFiles/8_points.dir/8_points.cpp.o
+.PHONY : 8_points.cpp.o
+
+8_points.i: 8_points.cpp.i
+
+.PHONY : 8_points.i
+
+# target to preprocess a source file
+8_points.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/8_points.dir/build.make applications/CMakeFiles/8_points.dir/8_points.cpp.i
+.PHONY : 8_points.cpp.i
+
+8_points.s: 8_points.cpp.s
+
+.PHONY : 8_points.s
+
+# target to generate assembly for a file
+8_points.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/8_points.dir/build.make applications/CMakeFiles/8_points.dir/8_points.cpp.s
+.PHONY : 8_points.cpp.s
+
 hello.o: hello.cpp.o
 
 .PHONY : hello.o
@@ -582,9 +708,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... install/local"
+	@echo "... 8_canny"
 	@echo "... list_install_components"
 	@echo "... install/strip"
+	@echo "... 7_filter_frequency"
 	@echo "... 2_2regions"
+	@echo "... 8_points"
 	@echo "... 6_tilt_video"
 	@echo "... pixels"
 	@echo "... 4_motionDetector"
@@ -620,6 +749,15 @@ help:
 	@echo "... 6_tilt_video.o"
 	@echo "... 6_tilt_video.i"
 	@echo "... 6_tilt_video.s"
+	@echo "... 7_filter_frequency.o"
+	@echo "... 7_filter_frequency.i"
+	@echo "... 7_filter_frequency.s"
+	@echo "... 8_canny.o"
+	@echo "... 8_canny.i"
+	@echo "... 8_canny.s"
+	@echo "... 8_points.o"
+	@echo "... 8_points.i"
+	@echo "... 8_points.s"
 	@echo "... hello.o"
 	@echo "... hello.i"
 	@echo "... hello.s"

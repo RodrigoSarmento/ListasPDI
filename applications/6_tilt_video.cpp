@@ -55,10 +55,6 @@ int main(int argc, char* argv[])
     cap.set(CAP_PROP_FRAME_HEIGHT, 480);
     width = cap.get(CAP_PROP_FRAME_WIDTH);
     height = cap.get(CAP_PROP_FRAME_HEIGHT);
-    cout << "largura=" << width << "\n";
-    cout << "altura =" << height << "\n";
-    cout << "fps    =" << cap.get(CAP_PROP_FPS) << "\n";
-    cout << "format =" << cap.get(CAP_PROP_FORMAT) << "\n";
 
     while (cap.isOpened()) {
         cap >> image1; // get a new frame from camera
@@ -91,23 +87,19 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-// Ajuste para regular a força de decayValue da região borrada
 void setDecayFocus(int, void*)
 {
-    // O decayValue mínimo será 1 devido o cálculo do alfa
+    // Min decay is 1
     decayValue = (double)decaySlider + 1;
     calculateFocus();
 }
 
-// Ajuste para regular a height da região central que entrará em foco
 void setCenterHeight(int, void*)
 {
-    // Calculo do center da imagem desejado
     height = (double)(barRegion * y_max) / 100;
     calculateFocus();
 }
 
-// Ajuste para regular a posição vertical do center da região que entrará em foco
 void setCenterPosition(int, void*)
 {
     center = (double)(barCenter * y_max) / 100;
@@ -116,7 +108,7 @@ void setCenterPosition(int, void*)
 
 void calculateFocus()
 {
-    // Calculo de l1 e l2 (linhas cujo valor de αlfa assume valor em torno de 0.5)
+    // Calculate the l1 and l2 of function.
     l1 = center - height / 2;
     l2 = center + height / 2;
 

@@ -168,6 +168,32 @@ listas_utils/fast:
 .PHONY : listas_utils/fast
 
 #=============================================================================
+# Target rules for targets named 8_canny
+
+# Build rule for target.
+8_canny: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 8_canny
+.PHONY : 8_canny
+
+# fast build rule for target.
+8_canny/fast:
+	$(MAKE) -f applications/CMakeFiles/8_canny.dir/build.make applications/CMakeFiles/8_canny.dir/build
+.PHONY : 8_canny/fast
+
+#=============================================================================
+# Target rules for targets named 7_filter_frequency
+
+# Build rule for target.
+7_filter_frequency: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 7_filter_frequency
+.PHONY : 7_filter_frequency
+
+# fast build rule for target.
+7_filter_frequency/fast:
+	$(MAKE) -f applications/CMakeFiles/7_filter_frequency.dir/build.make applications/CMakeFiles/7_filter_frequency.dir/build
+.PHONY : 7_filter_frequency/fast
+
+#=============================================================================
 # Target rules for targets named 2_2regions
 
 # Build rule for target.
@@ -179,6 +205,19 @@ listas_utils/fast:
 2_2regions/fast:
 	$(MAKE) -f applications/CMakeFiles/2_2regions.dir/build.make applications/CMakeFiles/2_2regions.dir/build
 .PHONY : 2_2regions/fast
+
+#=============================================================================
+# Target rules for targets named 8_points
+
+# Build rule for target.
+8_points: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 8_points
+.PHONY : 8_points
+
+# fast build rule for target.
+8_points/fast:
+	$(MAKE) -f applications/CMakeFiles/8_points.dir/build.make applications/CMakeFiles/8_points.dir/build
+.PHONY : 8_points/fast
 
 #=============================================================================
 # Target rules for targets named 6_tilt_video
@@ -310,7 +349,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... listas_utils"
+	@echo "... 8_canny"
+	@echo "... 7_filter_frequency"
 	@echo "... 2_2regions"
+	@echo "... 8_points"
 	@echo "... 6_tilt_video"
 	@echo "... pixels"
 	@echo "... 4_motionDetector"
