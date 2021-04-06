@@ -168,6 +168,19 @@ listas_utils/fast:
 .PHONY : listas_utils/fast
 
 #=============================================================================
+# Target rules for targets named kmeans
+
+# Build rule for target.
+kmeans: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kmeans
+.PHONY : kmeans
+
+# fast build rule for target.
+kmeans/fast:
+	$(MAKE) -f applications/CMakeFiles/kmeans.dir/build.make applications/CMakeFiles/kmeans.dir/build
+.PHONY : kmeans/fast
+
+#=============================================================================
 # Target rules for targets named 8_canny
 
 # Build rule for target.
@@ -179,19 +192,6 @@ listas_utils/fast:
 8_canny/fast:
 	$(MAKE) -f applications/CMakeFiles/8_canny.dir/build.make applications/CMakeFiles/8_canny.dir/build
 .PHONY : 8_canny/fast
-
-#=============================================================================
-# Target rules for targets named 7_filter_frequency
-
-# Build rule for target.
-7_filter_frequency: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 7_filter_frequency
-.PHONY : 7_filter_frequency
-
-# fast build rule for target.
-7_filter_frequency/fast:
-	$(MAKE) -f applications/CMakeFiles/7_filter_frequency.dir/build.make applications/CMakeFiles/7_filter_frequency.dir/build
-.PHONY : 7_filter_frequency/fast
 
 #=============================================================================
 # Target rules for targets named 2_2regions
@@ -349,8 +349,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... listas_utils"
+	@echo "... kmeans"
 	@echo "... 8_canny"
-	@echo "... 7_filter_frequency"
 	@echo "... 2_2regions"
 	@echo "... 8_points"
 	@echo "... 6_tilt_video"

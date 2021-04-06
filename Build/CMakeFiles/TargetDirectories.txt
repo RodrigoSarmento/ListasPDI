@@ -12,11 +12,11 @@
 /home/sarmento/LIB/ListasPDI/Build/utils/CMakeFiles/install/strip.dir
 /home/sarmento/LIB/ListasPDI/Build/utils/CMakeFiles/install/local.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/edit_cache.dir
-/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/install/local.dir
-/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/8_canny.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/list_install_components.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/install/strip.dir
-/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/7_filter_frequency.dir
+/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/install/local.dir
+/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/kmeans.dir
+/home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/8_canny.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/2_2regions.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/8_points.dir
 /home/sarmento/LIB/ListasPDI/Build/applications/CMakeFiles/6_tilt_video.dir

@@ -67,17 +67,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"bin\" \"shlib\""
@@ -98,6 +87,17 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -155,6 +155,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+applications/CMakeFiles/kmeans.dir/rule:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/kmeans.dir/rule
+.PHONY : applications/CMakeFiles/kmeans.dir/rule
+
+# Convenience name for target.
+kmeans: applications/CMakeFiles/kmeans.dir/rule
+
+.PHONY : kmeans
+
+# fast build rule for target.
+kmeans/fast:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/kmeans.dir/build.make applications/CMakeFiles/kmeans.dir/build
+.PHONY : kmeans/fast
+
+# Convenience name for target.
 applications/CMakeFiles/8_canny.dir/rule:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/8_canny.dir/rule
 .PHONY : applications/CMakeFiles/8_canny.dir/rule
@@ -168,21 +183,6 @@ applications/CMakeFiles/8_canny.dir/rule:
 8_canny/fast:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/8_canny.dir/build.make applications/CMakeFiles/8_canny.dir/build
 .PHONY : 8_canny/fast
-
-# Convenience name for target.
-applications/CMakeFiles/7_filter_frequency.dir/rule:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f CMakeFiles/Makefile2 applications/CMakeFiles/7_filter_frequency.dir/rule
-.PHONY : applications/CMakeFiles/7_filter_frequency.dir/rule
-
-# Convenience name for target.
-7_filter_frequency: applications/CMakeFiles/7_filter_frequency.dir/rule
-
-.PHONY : 7_filter_frequency
-
-# fast build rule for target.
-7_filter_frequency/fast:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/7_filter_frequency.dir/build.make applications/CMakeFiles/7_filter_frequency.dir/build
-.PHONY : 7_filter_frequency/fast
 
 # Convenience name for target.
 applications/CMakeFiles/2_2regions.dir/rule:
@@ -565,33 +565,6 @@ applications/CMakeFiles/6_tilt.dir/rule:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/6_tilt_video.dir/build.make applications/CMakeFiles/6_tilt_video.dir/6_tilt_video.cpp.s
 .PHONY : 6_tilt_video.cpp.s
 
-7_filter_frequency.o: 7_filter_frequency.cpp.o
-
-.PHONY : 7_filter_frequency.o
-
-# target to build an object file
-7_filter_frequency.cpp.o:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/7_filter_frequency.dir/build.make applications/CMakeFiles/7_filter_frequency.dir/7_filter_frequency.cpp.o
-.PHONY : 7_filter_frequency.cpp.o
-
-7_filter_frequency.i: 7_filter_frequency.cpp.i
-
-.PHONY : 7_filter_frequency.i
-
-# target to preprocess a source file
-7_filter_frequency.cpp.i:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/7_filter_frequency.dir/build.make applications/CMakeFiles/7_filter_frequency.dir/7_filter_frequency.cpp.i
-.PHONY : 7_filter_frequency.cpp.i
-
-7_filter_frequency.s: 7_filter_frequency.cpp.s
-
-.PHONY : 7_filter_frequency.s
-
-# target to generate assembly for a file
-7_filter_frequency.cpp.s:
-	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/7_filter_frequency.dir/build.make applications/CMakeFiles/7_filter_frequency.dir/7_filter_frequency.cpp.s
-.PHONY : 7_filter_frequency.cpp.s
-
 8_canny.o: 8_canny.cpp.o
 
 .PHONY : 8_canny.o
@@ -673,6 +646,33 @@ hello.cpp.s:
 	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/hello.dir/build.make applications/CMakeFiles/hello.dir/hello.cpp.s
 .PHONY : hello.cpp.s
 
+kmeans.o: kmeans.cpp.o
+
+.PHONY : kmeans.o
+
+# target to build an object file
+kmeans.cpp.o:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/kmeans.dir/build.make applications/CMakeFiles/kmeans.dir/kmeans.cpp.o
+.PHONY : kmeans.cpp.o
+
+kmeans.i: kmeans.cpp.i
+
+.PHONY : kmeans.i
+
+# target to preprocess a source file
+kmeans.cpp.i:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/kmeans.dir/build.make applications/CMakeFiles/kmeans.dir/kmeans.cpp.i
+.PHONY : kmeans.cpp.i
+
+kmeans.s: kmeans.cpp.s
+
+.PHONY : kmeans.s
+
+# target to generate assembly for a file
+kmeans.cpp.s:
+	cd /home/sarmento/LIB/ListasPDI/Build && $(MAKE) -f applications/CMakeFiles/kmeans.dir/build.make applications/CMakeFiles/kmeans.dir/kmeans.cpp.s
+.PHONY : kmeans.cpp.s
+
 pixels.o: pixels.cpp.o
 
 .PHONY : pixels.o
@@ -707,11 +707,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install/local"
-	@echo "... 8_canny"
 	@echo "... list_install_components"
 	@echo "... install/strip"
-	@echo "... 7_filter_frequency"
+	@echo "... install/local"
+	@echo "... kmeans"
+	@echo "... 8_canny"
 	@echo "... 2_2regions"
 	@echo "... 8_points"
 	@echo "... 6_tilt_video"
@@ -749,9 +749,6 @@ help:
 	@echo "... 6_tilt_video.o"
 	@echo "... 6_tilt_video.i"
 	@echo "... 6_tilt_video.s"
-	@echo "... 7_filter_frequency.o"
-	@echo "... 7_filter_frequency.i"
-	@echo "... 7_filter_frequency.s"
 	@echo "... 8_canny.o"
 	@echo "... 8_canny.i"
 	@echo "... 8_canny.s"
@@ -761,6 +758,9 @@ help:
 	@echo "... hello.o"
 	@echo "... hello.i"
 	@echo "... hello.s"
+	@echo "... kmeans.o"
+	@echo "... kmeans.i"
+	@echo "... kmeans.s"
 	@echo "... pixels.o"
 	@echo "... pixels.i"
 	@echo "... pixels.s"

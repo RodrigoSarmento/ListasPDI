@@ -53,8 +53,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "utils/CMakeFiles/listas_utils.dir/DependInfo.cmake"
+  "applications/CMakeFiles/kmeans.dir/DependInfo.cmake"
   "applications/CMakeFiles/8_canny.dir/DependInfo.cmake"
-  "applications/CMakeFiles/7_filter_frequency.dir/DependInfo.cmake"
   "applications/CMakeFiles/2_2regions.dir/DependInfo.cmake"
   "applications/CMakeFiles/8_points.dir/DependInfo.cmake"
   "applications/CMakeFiles/6_tilt_video.dir/DependInfo.cmake"
